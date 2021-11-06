@@ -37,9 +37,43 @@ main h2:after {
 }
 .container-text {
   position: absolute;
+  width: 430px;
   top: 30%;
   left: 20%;
 }
+.container-text h1{
+  color: white;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 3.2rem;
+  word-break:break-all;
+  transition: 0.7s;
+}
+.container-text h1:hover{
+  text-shadow: 0 0 10px #ff1500
+
+}
+
+
+.container-text h1 span{
+  font-size: 60px;
+  font-weight: 800;
+ 
+}
+.destaque-text{
+  color: #e94435;
+}
+
+.container-text h1::after{
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 5px;
+  left: +2px;
+  bottom: 1px;
+  background: #e94435;
+}
+
 .container-filmes {
   display: flex;
   flex-direction: row;
