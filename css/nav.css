@@ -4,10 +4,11 @@ a {
 
 nav {
   width: 100%;
-  background: #000;
+  background: rgb(0,0,0,1px);
   display: flex;
   justify-content: center;
   flex-direction: row;
+  position: absolute;
 }
 
 .container-nav {
