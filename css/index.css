@@ -1,5 +1,5 @@
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 main {
   background-color: black;
@@ -13,7 +13,7 @@ main h2 {
 }
 main h2:after {
   position: absolute;
-  content: '';
+  content: "";
   width: 10px;
   height: 30px;
   left: -20px;
@@ -41,30 +41,27 @@ main h2:after {
   top: 30%;
   left: 20%;
 }
-.container-text h1{
+.container-text h1 {
   color: white;
   font-weight: 600;
   font-size: 32px;
   line-height: 3.2rem;
-  word-break:break-all;
+  word-break: break-all;
   transition: 0.7s;
 }
-.container-text h1:hover{
-  text-shadow: 0 0 10px #ff1500
-
+.container-text h1:hover {
+  text-shadow: 0 0 10px #ff1500;
 }
 
-
-.container-text h1 span{
+.container-text h1 span {
   font-size: 60px;
   font-weight: 800;
- 
 }
-.destaque-text{
+.destaque-text {
   color: #e94435;
 }
 
-.container-text h1::after{
+.container-text h1::after {
   content: "";
   position: absolute;
   width: 120px;

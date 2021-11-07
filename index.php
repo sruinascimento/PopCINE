@@ -16,6 +16,7 @@ require "config/desenvolvedores.php";
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/footer.css" />
+  <script src="https://kit.fontawesome.com/dc9d684c57.js" crossorigin="anonymous"></script>
   <title>PopCINE</title>
 </head>
 
@@ -23,9 +24,9 @@ require "config/desenvolvedores.php";
   <header>
     <nav>
       <ul class="container-nav">
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Programação</a></li>
-        <li><a href="#">PopCINE</a></li>
+        <li><a href="#"><i class="fas fa-home"></i>Início</a></li>
+        <li><a href="#"><i class="far fa-calendar-alt"></i>Programação</a></li>
+        <li><a href="#"><i class="fas fa-film"></i>PopCINE</a></li>
       </ul>
     </nav>
   </header>
@@ -51,26 +52,53 @@ require "config/desenvolvedores.php";
       <?php } ?>
     </div>
     <div class="container-fim">
-      <div class="container-main">
-        <p>Os melhores conteúdos para sua carreira freelancer, direto na sua caixa de entrada</p>
+      <div class="container-main container-divs">
+
+        <div class="container-frase-final">
+          <p class="frase-final">Os <span>MELHORES</span> filmes para<br> <span>VOCÊ</span> e sua <span>FAMÍLIA</span><br>é aqui no <span>PopCINE.</span></p>
+        </div>
+
+        <div class="container-midias">
+          <h3>Siga-nos!<h3>
+              <ul>
+                <div class="container-midias-matriz">
+                  <a href="#" target="_blank">
+                    <li><i class="fab fa-facebook"></i>Facebook</li>
+                  </a>
+                  <a href="#" target="_blank">
+                    <li><i class="fab fa-instagram"></i>Instagram</li>
+                  </a>
+                </div>
+                <div class="container-midias-matriz">
+                  <a href="#" target="_blank">
+                    <li><i class="fab fa-twitter"></i>Twitter</li>
+                  </a>
+                  <a href="#" target="_blank">
+                    <li><i class="fab fa-whatsapp"></i>WhatsApp</li>
+                  </a>
+                </div>
+              </ul>
+        </div>
+
       </div>
+
     </div>
   </main>
   <footer>
     <div class="container-main container-footer">
-      <h5 class="titulo-dev">Desenvolvido por:</h5>  
-        <ul class="container-devs">
-          <?php foreach($devs as $dev){?>
-            <li>
-              <a href="<?= $dev['link']; ?>" target="_blank">
-                <img src="img/logo-github.svg">
-                <?= $dev['username'] ?>
-              </a>
-            </li>
-          <?php } ?>
-        </ul>
+      <h5 class="titulo-dev">Desenvolvido por:</h5>
+      <ul class="container-devs">
+        <?php foreach ($devs as $dev) { ?>
+          <li>
+            <a href="<?= $dev['link']; ?>" target="_blank">
+              <i class="fab fa-github"></i>
+              <?= $dev['username'] ?>
+            </a>
+          </li>
+        <?php } ?>
+      </ul>
     </div>
-    
+
   </footer>
 </body>
 
