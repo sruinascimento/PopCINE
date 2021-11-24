@@ -1,0 +1,18 @@
+{
+    "name": "brequedoc/pop-cine",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rui Nascimento",
+            "email": "sruy19@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Brequedoc\\PopCine\\": "src/"
+        }
+    }
+}
