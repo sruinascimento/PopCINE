@@ -68,6 +68,9 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus{
 .focus{
     border: 2px solid #e94435;
 }
+.container-input input{
+    color: #fff;
+}
 
 button{
     border: none;
