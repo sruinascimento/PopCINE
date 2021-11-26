@@ -39,7 +39,7 @@ class Cadastro
         $idUsuarioFK = $this->mysql->insert_id;
         $cadastraUsuario = $this->mysql->prepare(
             "INSERT INTO clientes (nome_clie, datanascimento_clie, id_logi_clie_fk)
-            VALUES (?, ?, ?, ?)"
+            VALUES (?, ?, ?)"
         );
         $cadastraUsuario->bind_param("ssi", $this->nome->getNome(), $this->dataNascimento, $idUsuarioFK);
         $cadastraUsuario->execute();

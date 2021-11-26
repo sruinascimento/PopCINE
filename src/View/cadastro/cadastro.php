@@ -19,7 +19,7 @@ require "src/View/head-html.php";
             </div>
             <div class="container-input">
                 <i class="fas fa-calendar"></i>
-                <input type="text" name="data" id="data-nascimento" placeholder="Data de nascimento" autocomplete="none" required>
+                <input type="text" name="data-nascimento" id="data-nascimento" placeholder="Data de nascimento" autocomplete="none" required>
             </div>
             <div class="container-input">
                 <i class="fas fa-id-card"></i>
@@ -41,17 +41,14 @@ require "src/View/head-html.php";
     </div>
 </main>
 
-<script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.11.2/jquery.mask.min.js" integrity="sha512-Y/GIYsd+LaQm6bGysIClyez2HGCIN1yrs94wUrHoRAD5RSURkqqVQEU6mM51O90hqS80ABFTGtiDpSXd2O05nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#data-nascimento").mask("00/00/0000")
+        $("#data-nascimento").mask("0000/00/00")
         $("#cpf").mask("000.000.000-00")
     });
 </script>
 <script type="text/javascript" src="public/js/cadastro.js"></script>
 
-    <?php require "src/View/footer-html.php"; ?>
+<?php require "src/View/footer-html.php"; ?>

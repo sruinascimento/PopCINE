@@ -1,15 +1,15 @@
-<?php 
-    $titulo = "Login";
-  require "src/View/head-html.php";
+<?php
+$titulo = "Login";
+require "src/View/head-html.php";
 ?>
 
 <main class="container-main-login-cadastro">
     <div class="container-texto-login-cadastro">
-        
+
     </div>
     <div class="container-login-cadastro">
         <h1>Login</h1>
-        <form action="login" method="post">
+        <form action="config-login" method="post">
             <div class="container-input">
                 <i class="fas fa-user"></i>
                 <input type="email" name="email" id="email" placeholder="E-mail" autocomplete="none" required>
