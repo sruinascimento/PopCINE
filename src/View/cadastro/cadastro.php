@@ -31,7 +31,7 @@ require "src/View/head-html.php";
             </div>
             <div class="container-input">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="cofirmar-senha" id="senha" placeholder="Repita sua senha" required>
+                <input type="password" name="cofirmar-senha" id="confirmar-senha" placeholder="Repita sua senha" required>
             </div>
             <button type="submit">Cadastrar</button>
         </form>
@@ -40,7 +40,11 @@ require "src/View/head-html.php";
         </a>
     </div>
 </main>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.11.2/jquery.mask.min.js" integrity="sha512-Y/GIYsd+LaQm6bGysIClyez2HGCIN1yrs94wUrHoRAD5RSURkqqVQEU6mM51O90hqS80ABFTGtiDpSXd2O05nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -48,5 +52,6 @@ require "src/View/head-html.php";
         $("#cpf").mask("000.000.000-00")
     });
 </script>
-<script type="text/javascript" src="js/cadastro.js">
+<script type="text/javascript" src="public/js/cadastro.js"></script>
+
     <?php require "src/View/footer-html.php"; ?>
