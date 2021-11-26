@@ -9,7 +9,7 @@ require "src/View/header-html.php";
 
 <main>
   <div class="container-banner">
-    <img src="img/banner-site.png" alt="banner site">
+    <img src="public/img/banner-site.png" alt="banner site">
   </div>
   <div class="container-main container-text">
     <h1><span class="destaque-text">Viva</span><span> a melhor</span><span class="destaque-text">experiência</span> <br> em assistir um filme.</h1>
