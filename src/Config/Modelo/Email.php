@@ -1,4 +1,7 @@
 <?php
+
+namespace Brequedoc\PopCine\Config\Modelo;
+
 class Email
 {
     private string $email;
@@ -20,9 +23,9 @@ class Email
         if (!$emailTratado) {
             $_SESSION['erro'] = true;
             //verificar depois
-            header("Location: {$_SERVER['HTTP_REFERER']}");
+            //header("Location: {$_SERVER['HTTP_REFERER']}");
             //header("Location: cadastro");
-            die("Erro no email");
+            //die("Erro no email");
         }
         return $emailTratado;
     }

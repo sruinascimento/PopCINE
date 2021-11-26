@@ -1,9 +1,12 @@
 <?php
+
+namespace Brequedoc\PopCine\Config\Modelo;
+
 class Nome
 {
     private string $nome;
 
-    public function __construct(string $nome, string $sobrenome)
+    public function __construct(string $nome)
     {
         $this->nome = $this->trataNome($nome);
     }

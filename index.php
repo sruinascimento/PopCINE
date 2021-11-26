@@ -1,14 +1,8 @@
 <?php
 require("src/database/conexaoBd.php");
+require("vendor/autoload.php");
 
-// require "vendor/autoload.php";
-
-// $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
-// $dotenv->load();
-
-// echo $_ENV['HOST'] . PHP_EOL;
-
-$rota = require __DIR__ . "/config/rotas.php";
+$rota = require __DIR__ . "/src/Config/rotas.php";
 $enderecoPagina = $_SERVER['PATH_INFO'];
 
 

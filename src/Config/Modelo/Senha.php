@@ -1,4 +1,7 @@
 <?php
+
+namespace Brequedoc\PopCine\Config\Modelo;
+
 class Senha
 {
     private string $senha;
@@ -8,9 +11,6 @@ class Senha
         $this->senha = $this->trataSenha($senha);
     }
 
-    /**
-     * Get the value of senha
-     */
     public function getSenha()
     {
         return $this->senha;
