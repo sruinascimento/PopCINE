@@ -31,6 +31,6 @@ use Brequedoc\PopCine\Config\Modelo\Senha;
 // }
 
 
-$cadastro = new Cadastro(new Nome($_POST['nome']), new Email($_POST['email']), $_POST['cpf'], new Senha($_POST['senha']));
+$cadastro = new Cadastro(new Nome($_POST['nome']), new Email($_POST['email']), $_POST['data-nascimento'], $_POST['cpf'], new Senha($_POST['senha']));
 
 $cadastro->cadastrarUsuario();
