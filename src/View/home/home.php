@@ -11,6 +11,7 @@ $filmes = $todosFilmes->buscarTodosFilmes();
 $titulo = 'PopCine';
 require "src/View/head-html.php";
 require "src/View/header-html.php";
+
 ?>
 
 <main>
@@ -25,12 +26,14 @@ require "src/View/header-html.php";
   </div>
   <div class="container-main container-filmes">
     <?php foreach ($filmes as $filme) { ?>
-      <ul>
-        <li><img src="<?= $filme['capafilme_film'] ?>" alt="capa filme"></li>
-        <li><?= $filme['nome_film'] ?></li>
-        <li><?= $filme['duracao_film'] ?></li>
-        <li><?= $filme['classificacao_film'] ?></li>
-      </ul>
+      <a href="filme?id=<?= $filme['id_film'];?>">
+        <ul>
+          <li><img src="<?= $filme['capafilme_film'] ?>" alt="capa filme"></li>
+          <li><?= $filme['nome_film'] ?></li>
+          <li><?= $filme['duracao_film'] ?></li>
+          <li><?= $filme['classificacao_film'] ?></li>
+        </ul>
+      </a>
     <?php } ?>
   </div>
   <div class="container-fim">
