@@ -28,7 +28,7 @@ $stmt->bind_param("s", $email->getEmail());
 $stmt->execute();
 $resultado = $stmt->get_result()->fetch_assoc();
 
-if (!password_hash($senha, $resultado['senha_logi_clie'])) {
+if (!password_verify($senha, $resultado['senha_logi_clie'])) {
     header("Location: login");
     exit();
 }

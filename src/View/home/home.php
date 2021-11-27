@@ -1,6 +1,12 @@
 <?php
+
+use Brequedoc\PopCine\Config\Modelo\Filme;
+
 require "src/Config/filmes.php";
 require "src/Config/desenvolvedores.php";
+
+$todosFilmes = new Filme();
+$filmes = $todosFilmes->buscarTodosFilmes();
 
 $titulo = 'PopCine';
 require "src/View/head-html.php";
@@ -20,10 +26,10 @@ require "src/View/header-html.php";
   <div class="container-main container-filmes">
     <?php foreach ($filmes as $filme) { ?>
       <ul>
-        <li><img src="<?= $filme['capa_filme'] ?>" alt="capa filme"></li>
-        <li><?= $filme['nome_filme'] ?></li>
-        <li><?= $filme['duracao'] ?></li>
-        <li><?= $filme['idade_indicada'] ?></li>
+        <li><img src="<?= $filme['capafilme_film'] ?>" alt="capa filme"></li>
+        <li><?= $filme['nome_film'] ?></li>
+        <li><?= $filme['duracao_film'] ?></li>
+        <li><?= $filme['classificacao_film'] ?></li>
       </ul>
     <?php } ?>
   </div>
