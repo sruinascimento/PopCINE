@@ -1,0 +1,97 @@
+.container-datas{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+.box-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.box-data li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    background-color: #df2615;
+    border-radius: 10px;
+    transition: 0.7s;
+}
+
+.box-data li:hover{
+    filter: brightness(1.25);
+    cursor: pointer;
+}
+.box-data-lista li span{
+    color: #fff;
+}
+.data-dia-semana{
+    font-size: 16px;
+    font-weight: 800;
+}
+.nome-dia-semana{
+    font-size: 11px;
+}
+
+.box-todos-filmes{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+.box-todos-filmes img{
+    width: 200px;
+}
+
+.box-filme{
+    display: flex;
+}
+.box-filme ul{
+    margin-left: 20px;
+}
+
+.filme-titulo{
+    color: #df2615;
+    font-size: 18px;
+    font-weight: 800;
+}
+.filme-duracao , .filme-genero{
+    color: white;
+}
+
+.box-filme-horario{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+}
+.box-filme-horario li a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box-horario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #df2615;
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+}
+.box-horario:hover{
+    cursor: pointer;
+}
+.box-sala{
+    font-size: 14px;
+    color: #fff;
+}

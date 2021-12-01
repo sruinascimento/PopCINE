@@ -66,5 +66,44 @@ class Filme
         $elencoFilme->execute();
         return $elencoFilme->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+    public function recuperaFilmesDoDia():array //tem que passar o dia
+    {
+        $filmeHorarios = $this->mysql->query(
+            "SELECT * FROM filmes f
+            INNER JOIN sessoes_filmes sf
+            ON f.id_film = sf.id_film_fk
+            INNER JOIN sessoes s
+            ON s.id_sess = sf.id_sess_fk
+            INNER JOIN salas_sessoes ss
+            ON sf.id_sess_film = ss.id_sess_film_fk
+            INNER JOIN salas sl
+            ON sl.id_sala = ss.id_sala_fk
+            WHERE data_sess_film = '2021-11-29'
+            GROUP BY nome_film
+            ORDER BY id_film"
+        );
+
+        return $filmeHorarios->fetch_all(MYSQLI_ASSOC);
+    }
+    public function recuperaFilmeHorarios(int $idFilme):array
+    {
+        $filmeHorarios = $this->mysql->prepare(
+            "SELECT * FROM filmes f
+            INNER JOIN sessoes_filmes sf
+            ON f.id_film = sf.id_film_fk
+            INNER JOIN sessoes s
+            ON s.id_sess = sf.id_sess_fk 
+            INNER JOIN salas_sessoes ss 
+            ON sf.id_sess_film = ss.id_sess_film_fk
+            INNER JOIN salas sl
+            ON sl.id_sala = ss.id_sala_fk
+            WHERE data_sess_film = '2021-11-29' AND f.id_film = ?
+            ORDER BY id_film_fk"
+        );
+        $filmeHorarios->bind_param("i",$idFilme);
+        $filmeHorarios->execute();
+        return $filmeHorarios->get_result()->fetch_all(MYSQLI_ASSOC);
+
+    }
 
 }

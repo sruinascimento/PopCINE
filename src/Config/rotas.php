@@ -11,6 +11,7 @@ $rotas = [
     'cadastro' => PASTA_VIEW . "/cadastro",
     'config-cadastro' => PASTA_CONFIG . "/Cadastro",
     'config-login' => PASTA_CONFIG . "/Login",
+    "poltrona" => PASTA_VIEW . "/poltrona"
 ];
 
 
