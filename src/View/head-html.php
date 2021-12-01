@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="public/css/login-cadastro.css" />
   <link rel="stylesheet" href="public/css/programacao.css" />
   <link rel="stylesheet" href="public/css/poltronas.css" />
+  <link rel="stylesheet" href="public/css/pagamento.css" />
+  <link rel="shortcut icon" type="imagex/png" href="public/img/logo-ico.png">
   <script src="https://kit.fontawesome.com/dc9d684c57.js" crossorigin="anonymous"></script>
   <title><?= $titulo ?></title>
 </head>

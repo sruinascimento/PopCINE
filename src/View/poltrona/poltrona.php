@@ -40,7 +40,7 @@ require "src/View/header-html.php";
                         procuraPoltronaReservada($poltronasReservadas,$poltrona['id_sala_polt'])? "poltrona-reservada" : "";
                         echo $poltrona['acessivel_polt'] == 1? "acessivel":"";
                         ?>" 
-                        href="?numero=<?= $poltrona['id_sala_polt']; ?>">
+                        href="pagamento?sessao=<?= $poltrona['id_sala_sess'] ?>&numero=<?= $poltrona['id_sala_polt']; ?>">
                         <li></li>
                     </a>
                 <?php } ?>

@@ -8,7 +8,7 @@ require "src/View/head-html.php";
     </div>
     <div class="container-login-cadastro">
         <h1>Cadastrar</h1>
-        <form action="config-cadastro" method="post">
+        <form class="form-login-cadastro" action="config-cadastro" method="post">
             <div class="container-input">
                 <i class="fas fa-user"></i>
                 <input type="text" name="nome" id="nome" placeholder="Nome" autocomplete="none" required>

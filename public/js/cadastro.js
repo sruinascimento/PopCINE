@@ -1,6 +1,4 @@
 
-
-
     var senha = document.querySelector("#senha");
     var confirmaSenha = document.querySelector("#confirmar-senha");
     var confirm = document.querySelector("#confirmar-senha");

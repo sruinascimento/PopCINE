@@ -64,4 +64,28 @@ class Poltrona
         $resultadoPoltronasVendidas->execute();
         return $resultadoPoltronasVendidas->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function poltronaDaSessao(int $salaSessao, int $poltrona): array
+    {
+        $resultado = $this->mysql->prepare("
+            SELECT * FROM filmes f
+            INNER JOIN sessoes_filmes sf
+            ON f.id_film = sf.id_film_fk
+            INNER JOIN sessoes s
+            ON s.id_sess = sf.id_sess_fk 
+            INNER JOIN salas_sessoes ss 
+            ON sf.id_sess_film = ss.id_sess_film_fk
+            INNER JOIN salas sl
+            ON sl.id_sala = ss.id_sala_fk
+            INNER JOIN salas_poltronas sp
+            ON sl.id_sala = sp.id_sala_fk
+            WHERE id_sala_sess = ? AND id_sala_polt = ?
+            ORDER BY id_film_fk"
+        );
+        $resultado->bind_param("ii",$salaSessao, $poltrona);
+        $resultado->execute();
+
+
+        return  $resultado->get_result()->fetch_array(MYSQLI_ASSOC);
+    }
 }

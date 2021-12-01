@@ -1,0 +1,37 @@
+.titulo-pagamento{
+    font-size: 24px;
+    color: #e94435;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+.container-pagamento{
+   display: flex;
+   justify-content: space-between;
+}
+.container-pagamento img{
+    position: absolute;
+    left: 63%;
+    width: 200px;
+}
+.form-pagamento{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+.botao-pagamento{
+    margin-top: 10px;
+    width: 100px;
+}
+.detalhes-sessao{
+    color: #fff;
+}
+.detalhes-sessao th{
+    text-align: left;
+    font-weight: 800;
+}
+.detalhes-sessao td{
+    text-align: right;
+}
+.detalhes-sessao tbody tr{
+    margin: 5px 0px;
+}

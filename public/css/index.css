@@ -4,6 +4,9 @@
 main {
   background-color: black;
 }
+body{
+  background-color: #000;
+}
 main h2 {
   position: relative;
   color: white;
