@@ -1,6 +1,9 @@
 <?php
 
+namespace Brequedoc\PopCine\Config\Modelo;
+
 use Brequedoc\PopCine\Database\ConexaoBd;
+
 
 class Ingresso 
 {
@@ -11,11 +14,11 @@ class Ingresso
         $this->mysql = ConexaoBd::criarConexao();
     }
 
-    // public function tiposDeIngresso(): arr
-    // {
-    //     $resultado = $this->mysql->prepare(
-
-    //     );
-    //     $resultado
-    // }
+    public function tiposDeIngresso(): array
+    {
+        $resultado = $this->mysql->query(
+            "SELECT * FROM tipos_ingresso"
+        );
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
 }

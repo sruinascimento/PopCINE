@@ -108,3 +108,8 @@ footer {
   font-size: 35px;
   font-weight: 800;
 }
+
+.footer-ex{
+  position: absolute;
+  bottom: 0;
+}

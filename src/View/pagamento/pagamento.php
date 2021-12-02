@@ -1,6 +1,8 @@
 <?php
 
+use Brequedoc\PopCine\Config\Modelo\Ingresso;
 use Brequedoc\PopCine\Config\Modelo\Pagamento;
+use Brequedoc\PopCine\Config\Modelo\Pedido;
 use Brequedoc\PopCine\Config\Modelo\Poltrona;
 
 require "src/Config/desenvolvedores.php";
@@ -10,22 +12,29 @@ if (!isset($_GET['numero'])) {
     exit();
 }
 
-$sala_sessao = $_GET['sessao'];
+$salaSessao = $_GET['sessao'];
 $poltrona = $_GET['numero'];
 
 $dadosDaPoltronaSessao = new Poltrona();
-$dadosSessao = $dadosDaPoltronaSessao->poltronaDaSessao($sala_sessao,$poltrona);
+$dadosSessao = $dadosDaPoltronaSessao->poltronaDaSessao($salaSessao,$poltrona);
 
+$ingresso = new Ingresso();
+$tiposIngresso = $ingresso->tiposDeIngresso();
 
+$pagamentos = new Pagamento();
+$formasPagamento = $pagamentos->formasDePagamento();
 
+if (isset($_POST['tipo_ingresso'],$_POST['forma_pagamento'])) {
+    $pedido = new Pedido();
+    $pedido->finalizarPedido($_POST['tipo_ingresso'], $_POST['forma_pagamento'], $salaSessao, $poltrona);
+}
 
 
 $titulo = 'Pagamento';
 require "src/View/head-html.php";
 require "src/View/header-html.php";
 
-$pagamentos = new Pagamento();
-$formasPagamento = $pagamentos->formasDePagamento();
+
 
 ?>
 
@@ -63,25 +72,22 @@ $formasPagamento = $pagamentos->formasDePagamento();
         </div> 
         <img src="<?=$dadosSessao['capafilme_film']?>" alt=""> 
     </div>
+   
     <div class="container-main">
-        <h3 class="titulo-pagamento">Selecione o tipo de Ingresso</h1>
-        <form class="form-pagamento" action="">
+        
+        <form class="form-pagamento" action="pagamento?sessao=<?= $salaSessao ?>&numero=<?=$poltrona?>" method="POST">
+            <span>
+                <h3 class="titulo-pagamento">Selecione o tipo de Ingresso</h1>
+                <?php foreach ($tiposIngresso as $ingresso) : ?> 
+                    <input type="radio" id="<?=$ingresso['tipo_ingr']?>" name="tipo_ingresso" value="<?= $ingresso['id_tipo_ingr']?>"> 
+                    <label for="<?=$ingresso['tipo_ingr']?>"> <?= $ingresso['tipo_ingr'] . " R$ " . 
+                    number_format($ingresso['preco_ingr'],2,',','.') ?> </label>
+                <?php endforeach ?>
+            </span>
+            <h3 class="titulo-pagamento">Selecione sua forma de pagamento</h1>
             <?php foreach ($formasPagamento as $pag) : ?> 
                 <span>        
-                    <input type="radio" id="<?=$pag['id_form_paga']?>" name="forma-pagamento" value=""> 
-                    <label for="<?=$pag['id_form_paga']?>"> <?=$pag['pagamento_form_paga']?> </label>
-                </span>   
-            <?php endforeach ?>
-            <button class="botao-pagamento">Confirmar</button>
-        </form>
-    </div>
-    
-    <div class="container-main">
-        <h3 class="titulo-pagamento">Selecione sua forma de pagamento</h1>
-        <form class="form-pagamento" action="">
-            <?php foreach ($formasPagamento as $pag) : ?> 
-                <span>        
-                    <input type="radio" id="<?=$pag['id_form_paga']?>" name="forma-pagamento" value=""> 
+                    <input type="radio" id="<?=$pag['id_form_paga']?>" name="forma_pagamento" value="<?= $pag['id_form_paga']?>"> 
                     <label for="<?=$pag['id_form_paga']?>"> <?=$pag['pagamento_form_paga']?> </label>
                 </span>   
             <?php endforeach ?>

@@ -24,6 +24,7 @@ $stmt = $conexaoBD->prepare(
     ON id_logi_clie_fk = id_logi_clie
     WHERE email_logi_clie = ?"
 );
+
 $stmt->bind_param("s", $email->getEmail());
 $stmt->execute();
 $resultado = $stmt->get_result()->fetch_assoc();
@@ -37,5 +38,6 @@ $_SESSION['id_logi_clie']    = $resultado['id_logi_clie'];
 $_SESSION['nome']            = $resultado['nome_clie'];
 $_SESSION['email']           = $resultado['email_logi_clie'];
 $_SESSION['data_nascimento'] = $resultado['datanascimento_clie'];
+
 
 print_r($_SESSION);
