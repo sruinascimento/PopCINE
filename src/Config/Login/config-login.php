@@ -15,9 +15,6 @@ $email = new Email($_POST['email']);
 $senha = trim($_POST['senha']);
 $conexaoBD = ConexaoBd::criarConexao();
 
-// $stmt = $conexaoBD->prepare(
-//     "SELECT * FROM login_cliente WHERE email_logi_clie = ?"
-// );
 $stmt = $conexaoBD->prepare(
     "SELECT * FROM clientes
     INNER JOIN login_cliente
@@ -40,4 +37,4 @@ $_SESSION['email']           = $resultado['email_logi_clie'];
 $_SESSION['data_nascimento'] = $resultado['datanascimento_clie'];
 
 
-print_r($_SESSION);
+header("Location: /");

@@ -1,0 +1,40 @@
+.container-ingressos-perfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+.box-ingresso{
+    width: 500px;
+    background: #DF2615;
+    border-radius: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.box-interno{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+.box-ingresso i{
+    margin-right: 5px;
+}
+.ingressos-link{
+    text-decoration: none;
+    gap: 10px;
+}
+
+.tabela-info-ingresso{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    color: #fff;
+}
+.detalhe-ingresso{
+    width: 100%;
+}

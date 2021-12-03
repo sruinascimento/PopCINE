@@ -20,7 +20,7 @@ class Filme
         );
         return $resultadoFilmes->fetch_all(MYSQLI_ASSOC);
     }
-    public function recuperaFilme(int $idFilme):?array
+    public function recuperaFilme(int $idFilme): ?array
     {
         $filme = $this->mysql->prepare(
             "SELECT * FROM filmes
@@ -36,7 +36,7 @@ class Filme
         $filme->execute();
         return $filme->get_result()->fetch_array(MYSQLI_ASSOC);
     }
-    public function recuperaCategoriaFilme(int $idFilme):?array
+    public function recuperaCategoriaFilme(int $idFilme): ?array
     {
         $categoriaFilme = $this->mysql->prepare(
             "SELECT nomegenero_gene FROM generos
@@ -50,7 +50,7 @@ class Filme
         $categoriaFilme->execute();
         return $categoriaFilme->get_result()->fetch_all(MYSQLI_ASSOC);
     }
-    public function recuperaElencoFilme(int $idFilme):array
+    public function recuperaElencoFilme(int $idFilme): array
     {
         $elencoFilme = $this->mysql->prepare(
             "SELECT * FROM filmes
@@ -66,9 +66,9 @@ class Filme
         $elencoFilme->execute();
         return $elencoFilme->get_result()->fetch_all(MYSQLI_ASSOC);
     }
-    public function recuperaFilmesDoDia():array //tem que passar o dia
+    public function recuperaFilmesDoDia(string $dataSessao): array //tem que passar o dia
     {
-        $filmeHorarios = $this->mysql->query(
+        $filmeHorarios = $this->mysql->prepare(
             "SELECT * FROM filmes f
             INNER JOIN sessoes_filmes sf
             ON f.id_film = sf.id_film_fk
@@ -78,14 +78,15 @@ class Filme
             ON sf.id_sess_film = ss.id_sess_film_fk
             INNER JOIN salas sl
             ON sl.id_sala = ss.id_sala_fk
-            WHERE data_sess_film = '2021-11-29'
+            WHERE data_sess_film = ?
             GROUP BY nome_film
             ORDER BY id_film"
         );
-
-        return $filmeHorarios->fetch_all(MYSQLI_ASSOC);
+        $filmeHorarios->bind_param("s", $dataSessao);
+        $filmeHorarios->execute();
+        return $filmeHorarios->get_result()->fetch_all(MYSQLI_ASSOC);
     }
-    public function recuperaFilmeHorarios(int $idFilme):array
+    public function recuperaFilmeHorarios(int $idFilme, string $dataSessao): array
     {
         $filmeHorarios = $this->mysql->prepare(
             "SELECT * FROM filmes f
@@ -97,13 +98,11 @@ class Filme
             ON sf.id_sess_film = ss.id_sess_film_fk
             INNER JOIN salas sl
             ON sl.id_sala = ss.id_sala_fk
-            WHERE data_sess_film = '2021-11-29' AND f.id_film = ?
+            WHERE data_sess_film = ? AND f.id_film = ?
             ORDER BY id_film_fk"
         );
-        $filmeHorarios->bind_param("i",$idFilme);
+        $filmeHorarios->bind_param("si", $dataSessao, $idFilme);
         $filmeHorarios->execute();
         return $filmeHorarios->get_result()->fetch_all(MYSQLI_ASSOC);
-
     }
-
 }

@@ -30,4 +30,26 @@
 //      $diaDaSemanaAtual++;
 //      $contador ++;
 //  }
- 
+
+//echo date("Y-m/d",strtotime('20/12/1999'));
+
+/*
+
+$timeZone = new DateTimeZone('America/Sao_Paulo');
+$dataNascimento = new Datetime('1999/12/05', $timeZone);
+
+echo " >>>> ".  date('Y/m/d', strtotime('21/12/1995')) . PHP_EOL;*/
+
+//echo date("d/m", strtotime("20/12/1999"));
+$data = "20/12/1999";
+$data2 = implode("-",array_reverse(explode("/",$data)));
+echo $data2;
+
+$dataFormatada = explode("/", "12/05/1996");
+
+
+
+// $MNTTZ = new DateTimeZone('America/Denver');
+// //$ESTTZ = new DateTimeZone('America/New_York');
+
+// $dt = new DateTime('11/24/2009 2:00 pm', $MNTTZ);

@@ -26,7 +26,7 @@ $formasPagamento = $pagamentos->formasDePagamento();
 
 if (isset($_POST['tipo_ingresso'],$_POST['forma_pagamento'])) {
     $pedido = new Pedido();
-    $pedido->finalizarPedido($_POST['tipo_ingresso'], $_POST['forma_pagamento'], $salaSessao, $poltrona);
+    $pedido->finalizarPedido($_POST['tipo_ingresso'], $_POST['forma_pagamento'], $salaSessao, $poltrona, $_SESSION['id_usuario']);
 }
 
 

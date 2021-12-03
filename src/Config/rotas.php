@@ -12,7 +12,10 @@ $rotas = [
     'config-cadastro' => PASTA_CONFIG . "/Cadastro",
     'config-login' => PASTA_CONFIG . "/Login",
     "poltrona" => PASTA_VIEW . "/poltrona",
-    "pagamento" => PASTA_VIEW ."/pagamento"
+    "pagamento" => PASTA_VIEW ."/pagamento",
+    "meu-perfil" => PASTA_VIEW ."/meu-perfil",
+    "logout" => PASTA_CONFIG. "/Login",
+    "ingresso" => PASTA_VIEW ."/ingresso"
 ];
 
 return $rotas;

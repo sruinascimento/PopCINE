@@ -8,7 +8,7 @@
     color: #fff;
 }
 .container-poltronas{
-    width: 370px;
+    width: 400px;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -17,14 +17,57 @@
 }
 
 .poltrona{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    padding: 15px 15px;
+    width: 35px;
+    height: 35px;
     border-radius: 5px;
     background: #df2615;
+    color: #fff;
 }
 .acessivel{
     background: #fffb00;
+    color: black;
 }
 .poltrona-reservada{
     background: #771309
+}
+.nome-filme-sessao{
+    color: #fff;
+    margin: 5px 0px;
+    font-size: 20px;
+}
+
+
+
+
+.lista-info-poltrona{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 20px;
+}
+.lista-info-poltrona li{
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+}
+
+.info-poltrona{
+    padding: 8px;
+    margin-right: 5px;
+}
+
+.disponivel{
+    background-color: #df2615;
+}
+
+.reservada{
+    background-color: #771309;
+}
+.acessivel{
+    background-color: #fffb00;
 }

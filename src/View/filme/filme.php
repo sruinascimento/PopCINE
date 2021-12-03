@@ -23,7 +23,7 @@ if (isset($_GET['id'])) {
 }
 
 $nomeFilme = $filme['nome_film'];
-
+$titulo = $filme['nome_film'];
 require "src/Config/desenvolvedores.php";
 require "src/View/head-html.php";
 require "src/View/header-html.php";
@@ -39,9 +39,6 @@ require "src/View/header-html.php";
                 <img class="capa-imagem" src="<?= $filme['capafilme_film'] ?>" alt="capa-filme">
             </div>
             <div class="detalhes-filme">
-                <span>aaaa</span>
-
-                <span>sodium_crypto_sign_seed_keypair</span>
                 <h3>Trailler</h3>
                 <iframe width="400" height="250" src="https://www.youtube.com/embed/<?= $filme['trailer_film'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div class="container-descricao">
@@ -51,7 +48,9 @@ require "src/View/header-html.php";
                         <li><span>Gênero: </span> 
                             <?php
                                 foreach ($generosFilme as $genero) {
-                                    echo "{$genero['nomegenero_gene']} ";
+                                    $ultimo = end($generosFilme);
+                                    echo trim($genero['nomegenero_gene']);
+                                    echo $ultimo['nomegenero_gene'] == $genero['nomegenero_gene']?".":", ";
                             } ?>
                         </li>
                         <li><span>Duração: </span><?= $filme['duracao_film'] ?> minutos</li>
@@ -59,9 +58,12 @@ require "src/View/header-html.php";
                         <li><span>Elenco: </span>
                             <?php
                             foreach ($elencoFilme as $pessoa) {
-                                echo "{$pessoa['nome_pess']}, ";
+                                $ultimo = end($elencoFilme);
+                                echo trim($pessoa['nome_pess']);
+                                echo $ultimo['nome_pess'] == $pessoa['nome_pess']?".":", ";
                             } ?>
                         </li>
+                        <li><span>Sinopse </span><?= $filme['sinopse_film'] ?></li>
                     </ul>
                     <p></p>
                     <p></p>

@@ -24,7 +24,7 @@ class Cadastro
         $this->mysql = ConexaoBd::criarConexao();
         $this->nome = $nome;
         $this->email = $email;
-        $this->dataNascimento = $dataNascimento;
+        $this->dataNascimento = implode("-",array_reverse(explode("/",$dataNascimento)));
         $this->cpf = $cpf;
         $this->senha = $senha;
     }

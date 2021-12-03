@@ -1,5 +1,5 @@
 <?php
-  $paginasSemClassFooter = array("/","/filme","","/programacao");
+  $paginasSemClassFooter = array("/","","/programacao");
   print_r($_SERVER['PATH_INFO']);
 ?>
 

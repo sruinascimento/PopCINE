@@ -5,13 +5,11 @@ use Brequedoc\PopCine\Config\Modelo\Filme;
 require "src/Config/filmes.php";
 require "src/Config/desenvolvedores.php";
 
-$todosFilmes = new Filme();
-$filmes = $todosFilmes->buscarTodosFilmes();
-
+$filmeCine = new Filme();
+$filmes = $filmeCine->buscarTodosFilmes();
 $titulo = 'PopCine';
 require "src/View/head-html.php";
 require "src/View/header-html.php";
-
 ?>
 
 <main>
@@ -26,12 +24,27 @@ require "src/View/header-html.php";
   </div>
   <div class="container-main container-filmes">
     <?php foreach ($filmes as $filme) { ?>
-      <a href="filme?id=<?= $filme['id_film'];?>">
+      <a class="container-filme" href="filme?id=<?= $filme['id_film'];?>">
         <ul>
           <li><img src="<?= $filme['capafilme_film'] ?>" alt="capa filme"></li>
-          <li><?= $filme['nome_film'] ?></li>
-          <li><?= $filme['duracao_film'] ?></li>
-          <li><?= $filme['classificacao_film'] ?></li>
+          <li>
+            <div>
+              <?= $filme['nome_film'] ?>
+            </div>
+            <div>
+              <img class="classificacao-filme" src="public/img/classificacao-filme/<?= $filme['classificacao_film'] ?>.png" alt="classificacao-filme">  
+            </div>
+        </li>
+          <li><span>Gênero:</span>
+          <?php  $categorias = $filmeCine->recuperaCategoriaFilme($filme['id_film']);
+                  foreach ($categorias as $categoria) {
+                      echo trim($categoria['nomegenero_gene']);
+                      $ultimo = end($categorias);           
+                      echo $ultimo['nomegenero_gene'] == $categoria['nomegenero_gene']?".":", ";
+                  }?>  
+          </li>
+          <li><span>Duração:</span> <?= $filme['duracao_film'] ?> minutos.</li>
+          <li>
         </ul>
       </a>
     <?php } ?>
@@ -72,5 +85,4 @@ require "src/View/header-html.php";
 
 <?php
 require "src/View/dev-footer-html.php";
-require "src/View/footer-html.php"
-?>
+require "src/View/footer-html.php"; ?>

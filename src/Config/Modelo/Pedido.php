@@ -11,11 +11,12 @@ class Pedido
         $this->mysql = ConexaoBd::criarConexao();
     }
 
-    public function finalizarPedido(int $tipoIngresso, int $formaPagamento, int $salaSessao, int $poltrona) 
+    public function finalizarPedido(int $tipoIngresso, int $formaPagamento, int $salaSessao, int $poltrona, int $idUsuario) 
     {
         $this->mysql->query("SET foreign_key_checks = 0");
-        $id_ingr = $this->insereIngresso($tipoIngresso, $formaPagamento);
+        $id_ingr = $this->insereIngresso($formaPagamento, $tipoIngresso);
         $id_polt_sess = $this->inserePoltronaSessao($salaSessao, $poltrona);
+        $this->insereUsuarioDoPedido($idUsuario,$id_ingr);
         $this->inserePoltronaVendidas($id_ingr, $id_polt_sess);
 
         header("Location: /");
@@ -54,4 +55,15 @@ class Pedido
         $resultado->execute();
         
     }
+    private function insereUsuarioDoPedido (int $idUsuario, int $idIngresso)
+    {
+        $resultado = $this->mysql->prepare(
+            "INSERT INTO clientes_ingressos (id_clie_fk, id_ingr_fk)
+            VALUES (?, ?)"
+        );
+        $resultado->bind_param("ii",$idUsuario, $idIngresso);
+        $resultado->execute();
+        
+    }
+
 }

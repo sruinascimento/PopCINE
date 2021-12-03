@@ -1,5 +1,6 @@
 <?php
 
+use Brequedoc\PopCine\Config\Modelo\Filme;
 use Brequedoc\PopCine\Config\Modelo\Poltrona;
 require "src/Config/desenvolvedores.php";
 
@@ -8,10 +9,12 @@ if (!isset($_GET['sessao'])) {
     exit();
 }
 
+$filme = new Filme();
 
 $poltronas = new Poltrona();
 $todasPoltronas = $poltronas->buscarPoltronasDisponiveis($_GET['sessao']);
 $poltronasReservadas = $poltronas->buscarPoltronasVendidas($_GET['sessao']);
+$informacoesFilme = $poltronas->buscarInformacaoDaSessao($_GET['sessao']);
 
 
 function procuraPoltronaReservada($poltronasReservadas,$id_poltrona)
@@ -32,18 +35,26 @@ require "src/View/header-html.php";
 
 <main>
     <div class="container-main">
+        <div class="titulo-filme">
+            <h1 class="titulo-poltrona">Selecione sua poltrona</h1>
+        </div>
         <div class="container-info-poltronas">
-            <h1>Selecione sua poltrona</h1>
-            <ul class="container-poltronas">
+            <h3 class="nome-filme-sessao"><?= $informacoesFilme['nome_film'] ." - Sala " . $informacoesFilme['nome_sala']?></h3>
+            <div class="container-poltronas">
                 <?php foreach ($todasPoltronas as $poltrona) {?>
                     <a class="poltrona <?=  
                         procuraPoltronaReservada($poltronasReservadas,$poltrona['id_sala_polt'])? "poltrona-reservada" : "";
                         echo $poltrona['acessivel_polt'] == 1? "acessivel":"";
                         ?>" 
                         href="pagamento?sessao=<?= $poltrona['id_sala_sess'] ?>&numero=<?= $poltrona['id_sala_polt']; ?>">
-                        <li></li>
+                    <?=$poltrona['id_polt_fk']?>
                     </a>
                 <?php } ?>
+            </div>
+            <ul class="lista-info-poltrona">
+                <li><span class="info-poltrona disponivel"></span>Disponível</li>
+                <li><span class="info-poltrona reservada"></span>Reservada</li>
+                <li><span class="info-poltrona acessivel"></span>Acessível</li>
             </ul>
         </div>
     </div>

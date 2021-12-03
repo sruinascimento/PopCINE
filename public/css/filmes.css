@@ -2,6 +2,8 @@
     font-size: 64px;
     font-weight: 900;
     color: #e94435;
+    margin-top: 10px;
+    margin-bottom: 40px;
 }
 .capa-imagem{
     width: 300px;
@@ -31,6 +33,7 @@
 .container-div{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 .detalhes-filme{
     margin-left: 20px;

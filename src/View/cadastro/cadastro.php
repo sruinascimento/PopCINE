@@ -11,7 +11,7 @@ require "src/View/head-html.php";
         <form class="form-login-cadastro" action="config-cadastro" method="post">
             <div class="container-input">
                 <i class="fas fa-user"></i>
-                <input type="text" name="nome" id="nome" placeholder="Nome" autocomplete="none" required>
+                <input type="text" name="nome" id="nome" placeholder="Nome" autocomplete="false"  required>
             </div>
             <div class="container-input">
                 <i class="fas fa-envelope-open-text"></i>
@@ -45,7 +45,7 @@ require "src/View/head-html.php";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.11.2/jquery.mask.min.js" integrity="sha512-Y/GIYsd+LaQm6bGysIClyez2HGCIN1yrs94wUrHoRAD5RSURkqqVQEU6mM51O90hqS80ABFTGtiDpSXd2O05nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#data-nascimento").mask("0000/00/00")
+        $("#data-nascimento").mask("00/00/0000")
         $("#cpf").mask("000.000.000-00")
     });
 </script>
