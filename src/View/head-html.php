@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="public/css/poltronas.css" />
   <link rel="stylesheet" href="public/css/pagamento.css" />
   <link rel="stylesheet" href="public/css/ingressos-perfil.css" />
+  <link rel="stylesheet" href="public/css/message/messages.css" />
+  <link rel="stylesheet" href="public/css/success.css" />
   <link rel="shortcut icon" type="imagex/png" href="public/img/logo-ico.png">
   <script src="https://kit.fontawesome.com/dc9d684c57.js" crossorigin="anonymous"></script>
   <title><?= $titulo ?></title>

@@ -14,7 +14,7 @@
     align-items: center;
 }
 .container-login-cadastro{
-    max-width: 480px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     padding: 30px;

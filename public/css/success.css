@@ -1,0 +1,24 @@
+.container-login-cadastro i{
+    font-size: 100px;
+    color: #e94435;
+    margin-bottom: 20px;
+}
+.ingresso-pedido-success{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.container-success{
+    align-items: center;
+}
+.ingresso-pedido-sucesss-p{
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+.ingresso-pedido-sucesss-p a{
+    text-decoration: underline;
+    color: #fff;
+}

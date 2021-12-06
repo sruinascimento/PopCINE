@@ -5,6 +5,7 @@ namespace Brequedoc\PopCine\Config\Login;
 use Brequedoc\PopCine\Config\Modelo\Email;
 use Brequedoc\PopCine\Config\Modelo\Senha;
 use Brequedoc\PopCine\Database\ConexaoBd;
+use Brequedoc\PopCine\Config\Helper\FlashMessageTrait;
 
 if (empty($_POST['email']) || empty($_POST['senha'])) {
     header('Location: login');
@@ -28,6 +29,7 @@ $resultado = $stmt->get_result()->fetch_assoc();
 
 if (!password_verify($senha, $resultado['senha_logi_clie'])) {
     header("Location: login");
+    FlashMessageTrait::defineMensagem("danger","Login ou senha inválidos");
     exit();
 }
 $_SESSION['id_usuario']      = $resultado['id_clie'];

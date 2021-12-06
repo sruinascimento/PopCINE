@@ -18,8 +18,8 @@ class Pedido
         $id_polt_sess = $this->inserePoltronaSessao($salaSessao, $poltrona);
         $this->insereUsuarioDoPedido($idUsuario,$id_ingr);
         $this->inserePoltronaVendidas($id_ingr, $id_polt_sess);
-
-        header("Location: /");
+        $_SESSION['Pedido-Sucesso'] = true;
+        header("Location: success");
         exit();
     }
 

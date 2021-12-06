@@ -1,6 +1,6 @@
 <?php
-  $paginasSemClassFooter = array("/","","/programacao");
-  print_r($_SERVER['PATH_INFO']);
+  $paginasSemClassFooter = array("/","","/programacao","/filme");
+  //print_r($_SERVER['PATH_INFO']);
 ?>
 
 <footer class="<?= (in_array($_SERVER['PATH_INFO'],$paginasSemClassFooter))? "": 'footer-ex'; ?>">

@@ -22,31 +22,31 @@ require "src/View/header-html.php";
             <h1 class="titulo-poltrona">Detalhe Ingresso</h1>
         </div>
        <?php foreach($ingressoDetalhes as $ingresso):?> 
-                <div class="">
-                    <div class="box-interno detalhe-ingresso">
+                <div class="centraliza-ingresso">
+                    <div class="box-interno detalhe-ingresso ingresso">
                     <table class="detalhes-sessao">
                         <tr>
-                            <th>Filme: </th>
+                            <th><i class="fas fa-film"></i> Filme: </th>
                             <td><?= $ingresso['nome_film'] ?></td>
                         </tr>
                         <tr>
-                            <th>Duração: </th>
-                            <td><?= $ingresso['duracao_film']?></td>
+                            <th><i class="fas fa-hourglass-half"></i> Duração: </th>
+                            <td><?= $ingresso['duracao_film']?> minutos</td>
                         </tr>
                         <tr>
-                            <th>Data da sessão</th>
+                            <th><i class="fas fa-calendar"></i> Data da sessão</th>
                             <td><?= date("d-m-Y", strtotime($ingresso['data_sess_film'])) ?></td>
                         </tr>
                         <tr>
-                            <th>Hora da sessão: </th>
+                            <th><i class="fas fa-clock"></i> Hora da sessão: </th>
                             <td><?= date("H:i",strtotime($ingresso['hora_sess'])); ?></td>
                         </tr>
                         <tr>
-                            <th>Sala: </th>
+                            <th><i class="fas fa-door-closed"></i> Sala: </th>
                             <td><?= $ingresso['nome_sala'] ?></td>
                         </tr>
                         <tr>
-                            <th>Poltrona: </th>
+                            <th><i class="fas fa-chair"></i> Poltrona: </th>
                             <td><?= $ingresso['id_polt_fk'] ?></td>
                         </tr>
                     </table>

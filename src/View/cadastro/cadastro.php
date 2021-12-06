@@ -7,7 +7,15 @@ require "src/View/head-html.php";
     <div class="container-texto-login-cadastro">
     </div>
     <div class="container-login-cadastro">
+        <?php if(isset($_SESSION['tipo_mensagem'],$_SESSION['mensagem'])): ?>
+            <div class="container message <?= $_SESSION['tipo_mensagem'] ?>">
+                <div class="container-text-message">
+                    <span><?= $_SESSION['mensagem'] ?></span>
+                </div>
+            </div>
+        <?php endif; unset($_SESSION['tipo_mensagem'], $_SESSION['mensagem']) ?>
         <h1>Cadastrar</h1>
+        
         <form class="form-login-cadastro" action="config-cadastro" method="post">
             <div class="container-input">
                 <i class="fas fa-user"></i>

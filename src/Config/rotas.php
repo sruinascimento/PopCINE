@@ -15,7 +15,8 @@ $rotas = [
     "pagamento" => PASTA_VIEW ."/pagamento",
     "meu-perfil" => PASTA_VIEW ."/meu-perfil",
     "logout" => PASTA_CONFIG. "/Login",
-    "ingresso" => PASTA_VIEW ."/ingresso"
+    "ingresso" => PASTA_VIEW ."/ingresso",
+    "success" => PASTA_VIEW . ""
 ];
 
 return $rotas;
