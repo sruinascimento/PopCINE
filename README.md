@@ -23,3 +23,8 @@ A equipe buscou apresentar algo a mais do que foi solicitado. Dessa forma, desen
 Curtimos bastante o desenvolvimento desse projeto, em que conseguimos aplicar vários conceitos dentre eles: SQL, Programação Orientada a Objetos, Rotas, Criptografia de senhas e etc. 
 
 Vale lembrar que, o sistema foi o mais modesto possível, pois ignoramos muitas verificações de segurança. 😉
+
+## Resultado:
+
+https://user-images.githubusercontent.com/77031612/145311571-0c39d895-5817-4101-8c48-055b09e539cb.mp4
+
